@@ -117,7 +117,7 @@ if(APPLE)
 endif()
 
 if(APPLE)
-	set(DOLPHIN_EXE_BASE "Slippi Dolphin")
+	set(DOLPHIN_EXE_BASE "Slippi_Dolphin")
 else()
 	set(DOLPHIN_EXE_BASE dolphin-emu)
 endif()
@@ -145,7 +145,7 @@ if(wxWidgets_FOUND)
 	endif()
 
 	corrosion_import_crate(MANIFEST_PATH ${CMAKE_SOURCE_DIR}/Externals/SlippiRustExtensions/Cargo.toml ${RUST_FEATURES})
-	target_link_libraries("${DOLPHIN_EXE}" PUBLIC slippi_rust_extensions)
+	target_link_libraries("${DOLPHIN_EXE}" slippi_rust_extensions)
 
 	if(APPLE)
 		include(BundleUtilities)
